@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using getElementById</title>
+</head>
+<body>
+    <!-- Input element with id="editCode" -->
+    <input type="text" id="editCode" placeholder="Type something here">
+
+    <!-- Button to trigger JavaScript action -->
+    <button onclick="editText()">Change Text</button>
+
+    <script>
+        // JavaScript function to interact with the input element using its id
+        function editText() {
+            // Access the element with id="editCode"
+            var inputElement = document.getElementById('editCode');
+
+            // Check if the element exists and change its value
+            if (inputElement) {
+                inputElement.value = "New text has been set!";
+            }
+        }
+    </script>
+</body>
+</html>

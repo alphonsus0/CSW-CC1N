@@ -1,0 +1,31 @@
+<div id="editCode"></div>
+
+<script>
+    // Aqui temos o código que queremos exibir na página sem executá-lo
+    var codigo = `def currency_exchange():
+  # Ask the user for the amount in USD
+  amount_usd = float(input("Enter the amount in USD: "))
+
+
+
+  # Ask for the current exchange rate (USD to EUR)
+  exchange_rate = float(input("Enter the current exchange rate (USD to EUR): "))
+  
+
+
+  # Calculate the equivalent amount in EUR
+  amount_eur = amount_usd * exchange_rate
+  
+
+
+  # Display the result
+  print(f"{amount_usd} USD is equivalent to {amount_eur:.2f} EUR.")
+
+
+
+# Run the currency exchange function
+currency_exchange()`;
+
+    // Usamos o document.getElementById('editCode') para exibir esse código como texto
+    document.getElementById('editCode').textContent = codigo;
+</script>

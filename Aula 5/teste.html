@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Currency Exchange</h2>
+        <form id="currencyForm">
+            <label for="usdAmount">Enter amount in USD:</label>
+            <input type="number" id="usdAmount" required>
+            
+            <label for="exchangeRate">Enter exchange rate (USD to EUR):</label>
+            <input type="number" id="exchangeRate" step="0.01" required>
+            
+            <button type="button" onclick="convertCurrency()">Convert</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertCurrency() {
+            // Get input values
+            var usdAmount = parseFloat(document.getElementById('usdAmount').value);
+            var exchangeRate = parseFloat(document.getElementById('exchangeRate').value);
+            
+            // Validate inputs
+            if (isNaN(usdAmount) || isNaN(exchangeRate) || usdAmount <= 0 || exchangeRate <= 0) {
+                alert("Please enter valid positive numbers.");
+                return;
+            }
+            
+            // Calculate the equivalent amount in EUR
+            var eurAmount = usdAmount * exchangeRate;
+            
+            // Display the result
+            document.getElementById('result').textContent = `${usdAmount} USD is equivalent to ${eurAmount.toFixed(2)} EUR.`;
+        }
+    </script>
+</body>
+</html>
