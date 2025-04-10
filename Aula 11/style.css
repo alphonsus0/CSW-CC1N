@@ -1,0 +1,18 @@
+body{
+    font-size: 1em;
+    background-color: gray;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    font-size: 4em;
+    color: white;
+
+}
+h2{
+    color: red;
+    text-align: justify ;
+}
+p{
+    color: blue;
+    text-align:center;
+}
